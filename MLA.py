@@ -1,4 +1,4 @@
-# VERSION 0.1 ALPHA
+# VERSION 0.1.2 ALPHA
 ''' https://developers.mercadolibre.com.ar/es_ar/items-y-busquedas '''
 
 
@@ -13,7 +13,6 @@ from pprint import pprint as visualizar
 # estructura esperada:
 # api_rest + site id + endpoint + seller_id
 
-escribirArchivoRaw = open("data_crudo.json", "w")
 api_rest = "https://api.mercadolibre.com/sites/"
 endpoint = "/search?seller_id="
 seller_id = int(179571326)
@@ -43,13 +42,20 @@ def RecorrerItems(seller_id, site_id):
     pedido = requests.get(api_rest + site_id + endpoint + str(seller_id))
     #visualizar(pedido.json()
     #visualizar(pedidoJson)
-    visualizar(pedidoJson)
 
+def Filtrar():
+    print(pedidoJson['id'])
+
+def Exportar():
+    with open("dump.json", "wb") as f:
+        f.write(pedido.content)
     
 
 RecorrerItems(seller_id, site_id)
 
+#Filtrar()
 
+Exportar()
 
 
 
