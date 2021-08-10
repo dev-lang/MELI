@@ -1,0 +1,47 @@
+documentacion hallada que fue util:
+https://developers.mercadolibre.com.ar/es_ar/items-y-busquedas
+https://developers.mercadolibre.com.ar/es_ar/categorias-y-atributos
+
+otra consultada (aun sin utilizar):
+https://developers.mercadolibre.com.ar/es_ar/categoriza-productos
+https://developers.mercadolibre.com.ar/es_ar/descripcion-de-articulos
+https://developers.mercadolibre.com.ar/es_ar/identificadores-de-productos
+https://developers.mercadolibre.com.ar/es_ar/stock-de-fulfillment
+
+## PSEUDOCODE
+
+# 1. Obtener el json desde https://api.mercadolibre.com/sites/SITE_ID/search?seller_id=" donde SITE_ID segun el test es MLA y seller_id es 179571326
+# 2. guardar el json en memoria o un archivo (temporal)
+# 3. Extraer los datos requeridos (iteración mediante list o hardcodeada)
+# 4. almacenar los datos extraidos en memoria en formato json*
+# 5. exportar como archivo json
+
+* los datos de category_id por name pueden requerir una iteración nested en el json y guardarse en un diccionario 
+para obtenerlos se debe hacer una función donde se compruebe que los valores se correspondan.
+tambien puede usarse https://api.mercadolibre.com/sites/MLA/categories
+donde al consultar cada categoria se puede obtener de forma rápida el name:value.
+
+es importante que quede un json de esta forma:
+
+
+{
+	"resultado1": {
+		"id":"value"
+		"title":"value"
+		"category_id":"value"
+		"name":"value"
+},
+
+	"resultado2": {
+		"id":"value"
+		"title":"value"
+		"category_id":"value"
+		"name":"value"
+	}
+
+}
+
+
+
+
+
