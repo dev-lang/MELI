@@ -25,3 +25,5 @@ pip install -r requeriments.txt
 ```
 python3  MLA.py
 ```
+
+4. cuando aparezca el prompt, podemos obviar los input con la tecla enter y usar los valores por default (los requeridos en el punto 1)
